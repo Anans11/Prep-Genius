@@ -1,0 +1,45 @@
+/* Header.css */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  height: 80px;
+}
+
+.logo {
+  font-size: 24px;
+}
+
+.auth {
+  display: flex;
+}
+
+.signin, .register {
+  margin-left: 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  background-color: orange;
+  color: white;
+  cursor: pointer;
+}
+
+.signin:hover, .register:hover {
+  background-color: darkorange;
+}
+
+.home-button {
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background-color: #007bff;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.home-button:hover {
+  background-color: #0056b3;
+}

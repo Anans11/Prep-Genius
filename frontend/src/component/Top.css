@@ -1,0 +1,67 @@
+/* Top.css */
+
+.table-container {
+    margin-top: 20px;
+  }
+  
+  .table-container table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table-container th,
+  .table-container td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .table-container th {
+    background-color: #f2f2f2;
+  }
+  
+  .table-container tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .table-container tr:hover {
+    background-color: #ddd;
+  }
+  
+  .table-container select {
+    padding: 5px;
+  }
+  
+  .table-container input {
+    padding: 5px;
+    width: 100%;
+  }
+  .tracker-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .tracker {
+    flex: 1;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    padding: 10px;
+    margin-right: 10px;
+    text-align: center;
+  }
+  
+  .tracker-label {
+    font-weight: bold;
+  }
+  
+  .tracker-count {
+    font-size: 1.2em;
+  }
+    
+  .tracker-progress {
+    height: 10px;
+    background-color: #ff6600;
+    border-radius: 5px;
+  }
+  
