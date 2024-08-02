@@ -30,7 +30,7 @@ import Footer from './component/Footer';
 import AboutSection from './component/Aboutsection';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Signup from './component/Signup';
-import {BrowserRouter,Routes,Route} from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Login from './component/Login';
 import Home from './component/Home';
 import Top from './component/Top';
@@ -38,29 +38,30 @@ import Level from './component/Level'
 import MCQPage from './component/MCQPage';
 import CodeZone from './component/CodeZone';
 import IntermediatePuzzles from './component/IntermediatePuzzles';
+import Profile from './component/Profile';
 
 
 
 const App = () => {
   return (
     <div>
-    <Header />
+      <Header />
       <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<AboutSection/>}></Route>
-        <Route path='/register' element={<Signup />}></Route>
-        <Route path='/login' element={<Login />}></Route>
-        <Route path='home' element={<Home />}></Route>
-        <Route path='/top' element={<Top />} />
-        <Route path='/level' element={<Level />} />
-        <Route path='/mcq' element={<MCQPage />} />
-        <Route path='/codezone' element={<CodeZone />} />
-        <Route path='/intermediate' element={<IntermediatePuzzles />} />
-
-      </Routes>
-      <Footer/>
+        <Routes>
+          <Route path="/" element={<AboutSection />}></Route>
+          <Route path='/register' element={<Signup />}></Route>
+          <Route path='/login' element={<Login />}></Route>
+          <Route path='/home' element={<Home />}></Route>
+          <Route path='/top' element={<Top />} />
+          <Route path='/level' element={<Level />} />
+          <Route path='/mcq' element={<MCQPage />} />
+          <Route path='/codezone' element={<CodeZone />} />
+          <Route path='/intermediate' element={<IntermediatePuzzles />} />
+          <Route path='/profile' element={<Profile />}></Route>
+        </Routes>
+        <Footer />
       </BrowserRouter>
-    
+
     </div>
   );
 };

@@ -27,7 +27,7 @@ router.post('/loadxp', async (req, res) => {
         if (!user) {
             return res.status(404).json({ message: "User not found" });
         }
-        const xp=user.xp;
+        const xp = user.xp;
         // user.problems = problems;
         // await user.save();
         res.status(200).json(xp);

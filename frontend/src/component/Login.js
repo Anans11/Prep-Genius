@@ -11,16 +11,26 @@ function Login() {
     const [password, setpassword] = useState()
     const navigate = useNavigate()
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        axios.post('http://localhost:3001/login', { email, password })
-            .then(result => {
-                console.log(result)
-                if (result.data === "success") {
-                    navigate('/home')
-                }
+        try {
+            let response = await fetch('http://localhost:3001/login', {
+                method: 'POST',
+                credentials: 'include',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email, password })
             })
-            .catch(err => console.log(err))
+            response = await response.json();
+            console.log('response from login: ', response);
+            if (response.success) {
+                navigate('/home')
+            }
+        } catch (error) {
+            console.log('error occured in login: ', error);
+
+        }
     }
 
     return (
