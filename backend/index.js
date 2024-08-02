@@ -28,13 +28,13 @@ mongoose.connect(uri)
 
 app.post('/update', verifyAuthToken, async (req, res) => {
     const userId = req.userId;
-    const { xp, problems } = req.body;
+    const { xp, problems, badge } = req.body;
     try {
         const user = await StudentModel.findById(userId);
         if (!user) {
             return res.status(404).json({ message: "User not found" });
         }
-        await user.updateOne({ xp, problems });
+        await user.updateOne({ xp, problems, badge });
         res.status(200).json({ message: "User updated successfully" });
     } catch (error) {
         console.error(error);
@@ -70,7 +70,8 @@ app.get('/loadprofile', verifyAuthToken, async (req, res) => {
         const email = user.email;
         const completed = user.completed;
         const xp = user.xp;
-        res.status(200).json({ name: name, email: email, completed: completed, xp: xp });
+        const badge = user.badge;
+        res.status(200).json({ name: name, email: email, completed: completed, xp: xp, badge: badge });
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: "Internal server error" });

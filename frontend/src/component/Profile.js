@@ -5,6 +5,7 @@ const Profile = () => {
     const [email, setEmail] = useState('');
     const [completed, setCompleted] = useState(0);
     const [xp, setXp] = useState(0);
+    const [badge, setBadge] = useState("Normal");
     const loadProfile = async () => {
         try {
             let response = await fetch('http://localhost:3001/loadprofile', {
@@ -17,6 +18,7 @@ const Profile = () => {
             setEmail(response.email);
             setCompleted(response.completed);
             setXp(response.xp);
+            setBadge(response.badge);
         } catch (error) {
             console.error(error);
         }
@@ -42,6 +44,10 @@ const Profile = () => {
             <div>
                 <label>XP: </label>
                 <label>{xp}</label>
+            </div>
+            <div>
+                <label>Badge: </label>
+                <label>{badge}</label>
             </div>
         </div>
     );

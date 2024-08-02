@@ -228,6 +228,10 @@ const StudentSchema = new mongoose.Schema({
     completed: {
         type: Number,
         default: 0
+    },
+    badge: {
+        type: String,
+        default: "normal"
     }
 });
 
